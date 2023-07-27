@@ -3,13 +3,12 @@ var app = express()
 
 app.use(express.static(__dirname+'/public'))
 app.use(express.json());
-app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended:false}));
 
 var port = process.env.port || 3000;
 
 app.get('/',(req, res)=>{
-    res.sendFile('views/pages/index')
+    res.sendFile('index.html');
 })
 
 app.listen(port,()=>{
